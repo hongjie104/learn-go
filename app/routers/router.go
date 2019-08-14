@@ -3,7 +3,6 @@ package routers
 import (
 	"net/http"
 
-	jwt "../middleware"
 	"../pkg/setting"
 	v1 "./api/v1"
 	"github.com/gin-gonic/gin"
@@ -20,15 +19,11 @@ func InitRouter() *gin.Engine {
 		c.JSON(http.StatusOK, gin.H{"message": "pong", "success": true})
 	})
 
-	r.POST("/api/v1/login", v1.Login)
-
-	apiV1 := r.Group("/api/v1/user")
-	apiV1.Use(jwt.JWT())
+	apiV1 := r.Group("api/v1")
+	// apiV1.Use(jwt.JWT())
 	{
-		// apiV1.GET("/tags", v1.GetTags)
-		// apiV1.GET("/test/:id", v1.Test)
-
-		apiV1.GET("/currentUser", v1.GetUser)
+		apiV1.GET("/tags", v1.GetTags)
+		apiV1.GET("/test", v1.Test)
 	}
 
 	return r

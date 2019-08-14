@@ -8,15 +8,12 @@ const (
 	// InvalidParams a
 	InvalidParams = 400
 
-	// LoginError a
-	LoginError = 10001
-
-	// // ErrorExistTag
-	// ErrorExistTag = 10001
-	// // ErrorNotExistTag a
-	// ErrorNotExistTag = 10002
-	// // ErrorNotExistArticle a
-	// ErrorNotExistArticle = 10003
+	// ErrorExistTag a
+	ErrorExistTag = 10001
+	// ErrorNotExistTag a
+	ErrorNotExistTag = 10002
+	// ErrorNotExistArticle a
+	ErrorNotExistArticle = 10003
 
 	// ErrorAuthCheckTokenFail a
 	ErrorAuthCheckTokenFail = 20001
